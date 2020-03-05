@@ -15,7 +15,7 @@ import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 import java.util.logging.Level
 
-class BaseApp : MultiDexApplication() {
+open class BaseApp : MultiDexApplication() {
     companion object {
         lateinit var instance: BaseApp
     }

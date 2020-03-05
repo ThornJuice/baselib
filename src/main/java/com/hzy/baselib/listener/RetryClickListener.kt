@@ -1,6 +1,6 @@
 package com.hzy.baselib.listener
 
 
-interface RetryClickListener {
+public  interface RetryClickListener {
     fun retry()
 }

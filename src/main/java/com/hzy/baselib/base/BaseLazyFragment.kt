@@ -27,8 +27,7 @@ abstract class BaseLazyFragment : Fragment() {
     /**
      * 加载布局
      */
-    @get:LayoutRes
-    protected abstract val layoutId: Int
+    protected abstract fun getLayoutId(): Int
 
     protected abstract fun init()
 
@@ -36,7 +35,6 @@ abstract class BaseLazyFragment : Fragment() {
     /**
      * 懒加载
      */
-    @UiThread
     protected abstract fun lazyLoad()
 
     override fun onAttach(context: Context) {
@@ -45,7 +43,7 @@ abstract class BaseLazyFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(layoutId, null)
+        return inflater.inflate(getLayoutId(), null)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
